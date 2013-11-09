@@ -17,8 +17,9 @@ class Controller < Sinatra::Base
   get %r{^/([a-zA-Z\-]+)$} do |channel|
     require_login
 
-    @channel = channel
-    erb :channel_index
+    #@channel = channel
+    #erb :channel_index
+    "Sorry, not implemented yet! You can help: <a href=\"https://github.com/geoloqi/irc-logs\">github.com/geoloqi/irc-logs</a>"
   end
 
   # Redirect to today
