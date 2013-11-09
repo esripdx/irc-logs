@@ -4,7 +4,7 @@ class Controller < Sinatra::Base
 
   def require_login
     if session[:username] == nil
-      redirect "/auth/github"
+      redirect "#{SiteConfig['base']}/auth/github"
     end
   end
 
@@ -128,7 +128,6 @@ class Controller < Sinatra::Base
 
     # Match hyperlinks
     result = html.gsub! %r{(https?://[^\s]+(?<!\)))}, '<a href="\1">\1</a>'
-    puts html.inspect
 
     # Match twitter usernames
     html.gsub! /(?<![a-z0-9_])@([a-z0-9_]+)/i, '<a href="https://twitter.com/\1">@\1</a>'
