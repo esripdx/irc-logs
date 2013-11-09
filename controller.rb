@@ -7,13 +7,18 @@ class Controller < Sinatra::Base
   end
 
   # Channel Index
-  get %r{/([a-zA-Z\-]+)} do |channel|
+  get %r{^/([a-zA-Z\-]+)$} do |channel|
     @channel = channel
     erb :channel_index
   end
 
+  # Redirect to today
+  get %r{^/([a-zA-Z\-]+)/today$} do |channel|
+    redirect "#{SiteConfig['base']}/#{channel}/#{DateTime.now.strftime('%Y-%m-%d')}"
+  end
+
   # Channel view for one day
-  get %r{/([a-zA-Z\-]+)/([0-9]{4}-[0-9]{2}-[0-9]{2})} do |channel, date|
+  get %r{^/([a-zA-Z\-]+)/([0-9]{4}-[0-9]{2}-[0-9]{2})} do |channel, date|
     @channel = channel
     @date = date
     erb :channel_date
