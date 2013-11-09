@@ -1,11 +1,9 @@
-<tr class="<%= classes.join(' ') %>">
-  <td>
-    <time class="dt-published" datetime="<%= _date_format(line[:timestamp], @tz, '%Y-%m-%dT%H:%M:%S%z') %>">
-      <%= _date_format(line[:timestamp], @tz, '%H:%M') %>
-    </time>
-  </td>
-  <td class="nick"><span class="p-author h-card"><%= nick %></span></td>
-  <td class="p-content p-name">
+<div class="h-entry line <%= classes.join(' ') %>">
+  <time class="dt-published" datetime="<%= _date_format(line[:timestamp], @tz, '%Y-%m-%dT%H:%M:%S%z') %>">
+    <%= _date_format(line[:timestamp], @tz, '%H:%M') %>
+  </time>
+  <span class="nick"><span class="p-author h-card"><%= nick %></span></span>
+  <span class="p-content p-name">
     <%= html %>
-  </td>
-</tr>
+  </span>
+</div>

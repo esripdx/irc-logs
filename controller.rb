@@ -106,7 +106,7 @@ class Controller < Sinatra::Base
 
   def format_line(line)
     data = nil
-    classes = ['h-entry']
+    classes = []
 
     nick = line[:nick]
 

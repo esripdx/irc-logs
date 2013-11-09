@@ -24,11 +24,9 @@
 <div class="logs">
   <div id="top" class="skip"><a href="#bottom">jump to bottom</a></div>
 
-<table>
 <% @logs.each do |line| %>
 <%= format_line line %>
 <% end %>
-</table>
 
   <div id="bottom" class="skip"><a href="#top">jump to top</a></div>
 </div>

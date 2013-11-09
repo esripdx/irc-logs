@@ -56,19 +56,6 @@ body, td {
   padding: 10px;
 }
 
-.logs table {
-  border-collapse: collapse;
-}
-.logs td {
-  padding: 1px;
-}
-td.nick {
-  text-align: right;
-  vertical-align: top;
-  padding-left: 14px;
-  padding-right: 5px;
-}
-
 
 a.time {
   color: #999;
@@ -100,13 +87,14 @@ a {
   margin-top: 12px;
 }
 
-@media (max-width: 320px) and (orientation: portrait) {
+@media (orientation: portrait) {
   body {
     width: 100%;
     font-size: 11pt;
   }
   .line {
     margin-bottom: 6px;
+    overflow-x: scroll;
   }
 }
 
