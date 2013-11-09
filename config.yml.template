@@ -1,0 +1,8 @@
+base: https://irc.esri.dev/logs
+github:
+  client_id: 
+  client_secret: 
+  orgs:
+    - Esri
+    - esripdx
+    - ArcGIS
