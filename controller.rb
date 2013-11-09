@@ -19,7 +19,7 @@ class Controller < Sinatra::Base
 
     #@channel = channel
     #erb :channel_index
-    "Sorry, not implemented yet! You can help: <a href=\"https://github.com/geoloqi/irc-logs\">github.com/geoloqi/irc-logs</a>"
+    "Sorry, not implemented yet! You can help: <a href=\"https://github.com/esripdx/irc-logs\">github.com/esripdx/irc-logs</a>"
   end
 
   # Redirect to today
