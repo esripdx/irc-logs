@@ -4,6 +4,7 @@ class Controller < Sinatra::Base
 
   def require_login
     if session[:username] == nil
+      session[:redirect] = request.path
       redirect "#{SiteConfig['base']}/auth/github"
     end
   end
@@ -93,7 +94,7 @@ class Controller < Sinatra::Base
 
     if authorized
       session[:username] = request.env['omniauth.auth']['extra']['raw_info']['login']
-      redirect "#{SiteConfig['base']}/"
+      redirect "#{SiteConfig['base']}#{session[:redirect]}"
     else
       erb "<h1>Not Authorized</h1>"
     end
