@@ -6,5 +6,6 @@ gem 'mysql2'
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'httpclient'
+gem 'timezone'
 
 gem 'shotgun'

@@ -1,4 +1,5 @@
 base: https://irc.esri.dev/logs
+mysql: mysql2://root@localhost/irclogs
 github:
   client_id: 
   client_secret: 
