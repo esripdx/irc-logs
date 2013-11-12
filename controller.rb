@@ -117,7 +117,7 @@ class Controller < Sinatra::Base
     if line[:type] == '64'
       classes << 'msg-join'
       html = line[:line].gsub(/^[\w\|]+ /, '')
-    elsif data = line[:line].match(/^https?:\/\/twitter.com\/([^ ]+) /)
+    elsif data = line[:line].match(/^https?:\/\/twitter.com\/([^ ]+) :: (.+)/)
       classes << 'msg-twitter'
       nick = "@#{data[1]}"
       html = CGI.escapeHTML data[2]
