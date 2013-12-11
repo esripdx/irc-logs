@@ -81,7 +81,8 @@ class Controller < Sinatra::Base
 
     # Check if the user is a member of the required organization
     orgs = JSON.parse(@@hc.get("https://api.github.com/user/orgs", nil, {
-      'Authorization' => "Bearer #{request.env['omniauth.auth']['credentials']['token']}"
+      'Authorization' => "Bearer #{request.env['omniauth.auth']['credentials']['token']}",
+      'User-Agent' => 'IRC Log Viewer'
     }).body)
 
     authorized = false
