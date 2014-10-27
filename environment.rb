@@ -16,7 +16,7 @@ class Controller < Sinatra::Base
     set :root, File.dirname(__FILE__)
 
     use OmniAuth::Builder do
-      provider :github, SiteConfig['github']['client_id'], SiteConfig['github']['client_secret']
+      provider :github, SiteConfig['github']['client_id'], SiteConfig['github']['client_secret'], :client_options => { :ssl => { :version => "TLSv1" } }
     end
     OmniAuth.config.full_host = SiteConfig['base']
 

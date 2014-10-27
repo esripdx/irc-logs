@@ -98,7 +98,10 @@ class Controller < Sinatra::Base
       session[:username] = request.env['omniauth.auth']['extra']['raw_info']['login']
       redirect "#{SiteConfig['base']}#{session[:redirect]}"
     else
-      erb "<h1>Not Authorized</h1>"
+      puts "Unauthorized:"
+      puts "Required orgs: #{SiteConfig['github']['orgs'].join(', ')}"
+      puts "User orgs: #{org_ids.join(', ')}"
+      erb "<h1>Not Authorized</h1><p>You must be a member of one of the authorized orgs to sign in. (#{SiteConfig['github']['orgs'].join(', ')})</p><p>The following orgs were found on your account: #{org_ids.join(', ')}</p><p>If you are already a member of one of the authorized orgs, you may need to make your membership public.</p>"
     end
   end
 
